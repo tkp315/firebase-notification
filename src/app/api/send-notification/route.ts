@@ -1,10 +1,9 @@
 import admin from "firebase-admin";
 import { Message } from "firebase-admin/messaging";
 import { NextRequest, NextResponse } from "next/server";
+import serviceAccount from '@/app/service_key.json'
 
 if (!admin.apps.length) {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  const serviceAccount = require("@/app/service_key.json");
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
   });
