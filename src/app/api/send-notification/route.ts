@@ -3,6 +3,7 @@ import { Message } from "firebase-admin/messaging";
 import { NextRequest, NextResponse } from "next/server";
 
 if (!admin.apps.length) {
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
   const serviceAccount = require("@/app/service_key.json");
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
